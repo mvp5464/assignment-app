@@ -13,6 +13,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        secondary: "#777980",
+      },
+
+      // keyframes: {
+      //   progress: {
+      //     "0%": { strokeDasharray: "0 100" },
+      //     "100%": { strokeDasharray: "100 100" },
+      //   },
+      // },
+      // animation: {
+      //   progress: "progress 1s ease-out forwards",
+      // },
     },
   },
   plugins: [],
