@@ -13,13 +13,12 @@ const Dashboard = () => {
   return (
     <div>
       <div className="mb-6">
-        {/* <SheetSide /> */}
         <TitleSection />
       </div>
       <div className="mb-6">
         <MainInfoSection />
       </div>
-      <div className="md:grid md:grid-cols-[1fr,2fr]  gap-6 mb-6">
+      <div className="grid md:grid-cols-[1fr,2fr] grid-cols-1 md:grid-rows-1 grid-rows-[1fr,1fr] gap-6 mb-6">
         <div>
           <TargetSection />
         </div>
@@ -27,7 +26,7 @@ const Dashboard = () => {
           <StatisticSection />
         </div>
       </div>
-      <div className="md:grid md:grid-cols-3 gap-6 mb-6">
+      <div className="grid md:grid-cols-3 grid-cols-1 md:grid-rows-1 grid-rows-3 gap-6 mb-6">
         <div>
           <SalesSourceSection />
         </div>
@@ -38,7 +37,7 @@ const Dashboard = () => {
           <TopCategorySection />
         </div>
       </div>
-      <div className="md:grid md:grid-cols-[2fr,1fr] gap-6 mb-4s">
+      <div className="grid md:grid-cols-[2fr,1fr] grid-cols-1 md:grid-rows-1 grid-rows-[1fr,1fr] gap-6 mb-4s">
         <div>
           <RecentOrdersSection />
         </div>

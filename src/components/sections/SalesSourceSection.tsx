@@ -9,33 +9,31 @@ const SalesSourceSection = () => {
     <Wrapper>
       <div className=" flex flex-col justify-center h-full ">
         <CardsTopCard title="Sales Source" />
-        <div className="grow flex flex-col justify-center items-center relative w-full">
-          <div className="w-full flex justify-center items-center ">
-            <CircleShowIcon
-              type="full"
-              percentage={100}
-              color={"#D5F0FF"}
-              className="w-[95%] h-[95%] absolute -top-0 left-0"
-            />
-            <CircleShowIcon
-              type="full"
-              percentage={40}
-              color={"#2086BF"}
-              className="w-[95%] h-[95%] z-50 absolute -top-0 left-0"
-            />
-            <CircleShowIcon
-              type="full"
-              percentage={60}
-              color={"#2BB2FE"}
-              className="w-[95%] h-[95%] z-40 absolute -top-0 left-0"
-            />
-            <CircleShowIcon
-              type="full"
-              percentage={70}
-              color={"#80D1FE"}
-              className="w-[95%] h-[95%] z-30 absolute -top-0 left-0"
-            />
-          </div>
+        <div className="grow min-h-48 flex flex-col justify-center items-center relative w-full">
+          <CircleShowIcon
+            type="full"
+            percentage={100}
+            color={"#D5F0FF"}
+            className="w-[95%] h-[95%] absolute -top-0 left-0"
+          />
+          <CircleShowIcon
+            type="full"
+            percentage={40}
+            color={"#2086BF"}
+            className="w-[95%] h-[95%] z-50 absolute -top-0 left-0"
+          />
+          <CircleShowIcon
+            type="full"
+            percentage={60}
+            color={"#2BB2FE"}
+            className="w-[95%] h-[95%] z-40 absolute -top-0 left-0"
+          />
+          <CircleShowIcon
+            type="full"
+            percentage={70}
+            color={"#80D1FE"}
+            className="w-[95%] h-[95%] z-30 absolute -top-0 left-0"
+          />
           <div className="font-[500] text-2xl">$75.5k</div>
           <div className="bg-[#E9FAF7] text-[#1A9882] px-2 rounded-lg text-xs">
             +10%

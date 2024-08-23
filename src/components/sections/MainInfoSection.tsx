@@ -7,7 +7,7 @@ import UnfinishedBoxIcon from "../icons/UnfinishtedBoxIcon";
 
 const MainInfoSection = () => {
   return (
-    <div className=" md:flex justify-between items-center w-full gap-5">
+    <div className=" flex flex-col md:flex-row justify-between items-center w-full gap-5">
       <MainInfoCard
         title={"Total Project"}
         numbers={"6,784"}

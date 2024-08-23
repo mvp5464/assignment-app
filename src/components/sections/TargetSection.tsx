@@ -9,21 +9,21 @@ const TargetSection = () => {
     <div className="w-full h-full">
       <Wrapper>
         <CardsTopCard title={"Target"} subTitle={"Revenue Target"} />
-        <div className="flex justify-center items-center flex-col mt-14 mb-10 relative">
-          <div className="w-full absolute -top-16 left-0 felx justify-center items-center">
+        <div className="flex justify-center items-center flex-col mt-16 md:mb-14 mb-10 relative">
+          <div className="w-full absolute md:-top-16 -top-14 left-0 flex justify-center items-center">
             <CircleShowIcon
               type="half"
               percentage={100}
               color={"#E0E2E7"}
-              className="md:w-full md:h-full w-1/2 h-1/2 -rotate-90"
+              className="w-full h-full -rotate-90"
             />
           </div>
-          <div className="w-full absolute -top-16 left-0 ">
+          <div className="w-full absolute md:-top-16 -top-14 left-0 flex justify-center items-center ">
             <CircleShowIcon
               type="half"
               percentage={75.55}
               color={"#2086BF"}
-              className="md:w-full md:h-full w-1/2 h-1/2 -rotate-90 z-10 "
+              className="w-full h-full -rotate-90 z-10 "
             />
           </div>
           <div className="text-3xl font-[500]">75.55%</div>
@@ -35,7 +35,7 @@ const TargetSection = () => {
           You succeed earn <span className="text-black">$240</span> today, its
           higher than yesterday
         </div>
-        <div className="flex justify-center items-center gap-6">
+        <div className="flex justify-center items-center md:gap-6 gap-3">
           <TargetSectionCard title={"Target"} digit={"20k"} arrow="down" />
           <TargetSectionCard title={"Revenue"} digit={"16k"} arrow="up" />
           <TargetSectionCard title={"Today"} digit={"1.5k"} arrow="up" />
