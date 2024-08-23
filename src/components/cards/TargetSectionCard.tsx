@@ -13,7 +13,7 @@ const TargetSectionCard = ({
   return (
     <div className="flex justify-center items-center flex-col gap-1">
       <div className="text-xs text-lightGray">{title}</div>
-      <div className="flex justify-center items-center md:gap-2">
+      <div className="flex justify-center items-center gap-2">
         <div className="font-[500] text-lg">${digit}</div>
         <div>
           {arrow === "up" ? (

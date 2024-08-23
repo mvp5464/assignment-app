@@ -9,7 +9,7 @@ const TargetSection = () => {
     <div className="w-full h-full">
       <Wrapper>
         <CardsTopCard title={"Target"} subTitle={"Revenue Target"} />
-        <div className="flex justify-center items-center flex-col mt-16 md:mb-14 mb-10 relative">
+        <div className="flex justify-center items-center flex-col mt-16 mb-14  relative">
           <div className="w-full absolute md:-top-16 -top-14 left-0 flex justify-center items-center">
             <CircleShowIcon
               type="half"
@@ -35,7 +35,7 @@ const TargetSection = () => {
           You succeed earn <span className="text-black">$240</span> today, its
           higher than yesterday
         </div>
-        <div className="flex justify-center items-center md:gap-6 gap-3">
+        <div className="flex justify-center items-center gap-6">
           <TargetSectionCard title={"Target"} digit={"20k"} arrow="down" />
           <TargetSectionCard title={"Revenue"} digit={"16k"} arrow="up" />
           <TargetSectionCard title={"Today"} digit={"1.5k"} arrow="up" />

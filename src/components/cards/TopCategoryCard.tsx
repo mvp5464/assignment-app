@@ -21,6 +21,7 @@ const TopCategoryCard = ({
       <div className="grow">{title}</div>
       <div>{digit}</div>
       <div
+        // className={`bg-[#F0F1F3] font-[500] text-[#4A4C56] text-xs p-1 rounded-lg`}
         className={`bg-[${bgColor}] font-[500] text-[${textColor}] text-xs p-1 rounded-lg`}
       >{`${percentage}%`}</div>
     </div>
