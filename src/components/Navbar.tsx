@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="flex justify-between items-center  mb-5">
-        <div className="flex gap-2  items-center">
+        <div className="flex gap-2 justify-center items-center">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" className="md:hidden block px-3">
@@ -26,7 +26,11 @@ const Navbar = () => {
             </SheetContent>
           </Sheet>
           <SearchIcon />
-          <input type="text" placeholder="Search" className="bg-[#f7f7fa]" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="bg-[#f7f7fa] md:w-full w-1/2"
+          />
         </div>
         <div className="flex items-center gap-2 ">
           <div className="md:flex gap-6 justify-center h-10 items-center hidden ">
