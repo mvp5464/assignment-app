@@ -19,56 +19,56 @@ const TopCategorySection = () => {
       />
       <div className="mt-5 gap-3 flex flex-col">
         <TopCategoryCard
-          bgColor={"#EAF8FF"}
-          textColor={"#2086BF"}
+          bgColor={"bg-[#EAF8FF]"}
+          textColor={"text-[#2086BF]"}
           icon={<PhoneIcon />}
           title={"Smartphone"}
           digit={"1,509"}
           percentage={"+12"}
         />
         <TopCategoryCard
-          bgColor={"#FFF0EA"}
-          textColor={"#F86624"}
+          bgColor={"bg-[#FFF0EA]"}
+          textColor={"text-[#F86624]"}
           icon={<TabletIcon />}
           title={"Tablet"}
           digit={"1,460"}
           percentage={"-5"}
         />
         <TopCategoryCard
-          bgColor={"#E9FAF7"}
-          textColor={"#22CAAD"}
+          bgColor={"bg-[#E9FAF7]"}
+          textColor={"text-[#22CAAD]"}
           icon={<EarphoneIcon />}
           title={"Earphone"}
           digit={"1,229"}
           percentage={"0"}
         />
         <TopCategoryCard
-          bgColor={"#FEECEE"}
-          textColor={"#EB3D4D"}
+          bgColor={"bg-[#FEECEE]"}
+          textColor={"text-[#EB3D4D]"}
           icon={<LaptopIcon />}
           title={"Laptop & PC"}
           digit={"982"}
           percentage={"+19"}
         />
         <TopCategoryCard
-          bgColor={"#EAF8FF"}
-          textColor={"#2BB2FE"}
+          bgColor={"bg-[#EAF8FF]"}
+          textColor={"text-[#2BB2FE]"}
           icon={<MouseIcon />}
           title={"Mouse"}
           digit={"791"}
           percentage={"-25"}
         />
         <TopCategoryCard
-          bgColor={"#FFFAE7"}
-          textColor={"#F9C80E"}
+          bgColor={"bg-[#FFFAE7]"}
+          textColor={"text-[#F9C80E]"}
           icon={<USBIcon />}
           title={"Hardisk & USB Drive"}
           digit={"679"}
           percentage={"+11"}
         />
         <TopCategoryCard
-          bgColor={"#F0F1F3"}
-          textColor={"#4A4C56"}
+          bgColor={"bg-[#F0F1F3]"}
+          textColor={"text-[#4A4C56]"}
           icon={<CameraIcon />}
           title={"Camera"}
           digit={"679"}

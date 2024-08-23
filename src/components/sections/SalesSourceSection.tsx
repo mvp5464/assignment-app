@@ -41,22 +41,22 @@ const SalesSourceSection = () => {
         </div>
         <div className="flex flex-col gap-3">
           <SalesSourceCard
-            color={"#2086BF"}
+            bgColor={"bg-[#2086BF]"}
             name={"Official Website"}
             digit={"$10,000"}
           />
           <SalesSourceCard
-            color={"#2BB2FE"}
+            bgColor={"bg-[#2BB2FE]"}
             name={"Official Store"}
             digit={"$10,000"}
           />
           <SalesSourceCard
-            color={"#80D1FE"}
+            bgColor={"bg-[#80D1FE]"}
             name={"Amazon Store"}
             digit={"$10,000"}
           />
           <SalesSourceCard
-            color={"#D5F0FF"}
+            bgColor={"bg-[#D5F0FF]"}
             name={"Reseller"}
             digit={"$10,000"}
           />

@@ -8,7 +8,7 @@ const CustomerGrowthCard = ({
 }: {
   country: string;
   customers: string;
-  percentage: number;
+  percentage: string;
   color: string;
 }) => {
   return (
@@ -24,10 +24,13 @@ const CustomerGrowthCard = ({
       </div>
       <div className="flex items-center gap-3">
         <div className="h-2 rounded-full w-20 overflow-hidden bg-fuchsia-200">
-          {/* <div className={`h-2 w-[${percentage}%]  bg-[${color}]`} /> */}
-          <div className={`h-2 w-[${percentage}%]  bg-[${color}]`} />
+          <div
+            className={`h-2 ${percentage && percentage} ${color && color}`}
+          />
         </div>
-        <div className="text-lightGray w-8 text-xs">{`${percentage}%`}</div>
+        <div className="text-lightGray w-8 text-xs">{`${
+          percentage.match(/\d+/)?.[0]
+        }%`}</div>
       </div>
     </div>
   );

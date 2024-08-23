@@ -13,34 +13,34 @@ const CustomerGrowthSection = () => {
       </div>
       <div>
         <CustomerGrowthCard
-          color={"#22CAAD"}
+          color={"bg-[#22CAAD]"}
           country={"USA"}
           customers={"1,240"}
-          percentage={80}
+          percentage={"w-[80%]"}
         />
         <CustomerGrowthCard
-          color={"#F86624"}
+          color={"bg-[#F86624]"}
           country={"Japan"}
           customers={"1,240"}
-          percentage={60}
+          percentage={"w-[60%]"}
         />
         <CustomerGrowthCard
-          color={"#F9C80E"}
+          color={"bg-[#F9C80E]"}
           country={"France"}
           customers={"1,240"}
-          percentage={49}
+          percentage={"w-[49%]"}
         />
         <CustomerGrowthCard
-          color={"#2086BF"}
+          color={"bg-[#2086BF]"}
           country={"Germany"}
           customers={"1,240"}
-          percentage={100}
+          percentage={"w-[100%]"}
         />
         <CustomerGrowthCard
-          color={"#EB3D4D"}
+          color={"bg-[#EB3D4D]"}
           country={"South Korea"}
           customers={"1,240"}
-          percentage={50}
+          percentage={"w-[50%]"}
         />
       </div>
     </Wrapper>

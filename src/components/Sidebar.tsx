@@ -1,7 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import React from "react";
 
 import SidebarCard from "./cards/SidebarCard";
 import Logo from "./icons/Logo";
@@ -18,21 +16,12 @@ const Sidebar = () => {
   const path = usePathname();
   const router = useRouter();
 
-  useEffect(() => {
-    console.log({ path });
-  }, [path]);
-
   const handleOnClick = (link: string) => {
     router.push(link);
   };
 
   return (
-    <div className="bg-white min-h-screen sticky top-0 left-0 md:block hidden">
-      {/* <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline">|||</Button>
-        </SheetTrigger>
-        <SheetContent side="left"> */}
+    <>
       <div className="flex p-5 gap-3 mb-4">
         <div>
           <Logo className="w-8 h-8" />
@@ -96,9 +85,7 @@ const Sidebar = () => {
           onClick={() => handleOnClick("/calender")}
         />
       </div>
-      {/* </SheetContent>
-      </Sheet> */}
-    </div>
+    </>
   );
 };
 

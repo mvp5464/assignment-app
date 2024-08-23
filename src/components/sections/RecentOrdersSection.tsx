@@ -29,7 +29,7 @@ const RecentOrdersSection = () => {
             See All
           </div>
         </div>
-        <div>
+        <div className="md:hidden block">
           <ThreeDotsIcon className="w-4 h-4" />
         </div>
       </div>
