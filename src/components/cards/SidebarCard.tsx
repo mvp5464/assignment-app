@@ -7,18 +7,21 @@ const SidebarCard = ({
   notification,
   hasChild = false,
   selected = false,
+  onClick,
 }: {
   image: React.JSX.Element;
   title: string;
   notification: number;
   hasChild?: boolean;
   selected?: boolean;
+  onClick: () => void;
 }) => {
   return (
     <div
       className={`flex items-center gap-[0.4rem] px-4 py-[0.6rem] ${
         selected ? "text-[#2086BF] bg-[#EAF8FF]" : "text[#858D9D]"
-      }  mb-2 relative`}
+      }  mb-2 relative cursor-pointer`}
+      onClick={onClick}
     >
       {selected && (
         <span className="w-1 h-full bg-[#2086BF] z-10 absolute top-0 left-0" />

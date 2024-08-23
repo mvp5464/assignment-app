@@ -3,7 +3,6 @@ import CardsTopCard from "../cards/CardsTopCard";
 import SalesSourceCard from "../cards/SalesSourceCard";
 import Wrapper from "../Wrapper";
 import CircleShowIcon from "../icons/CircleShowIcon";
-// import circleShowIcon from "../icons/circleShowIcon";
 
 const SalesSourceSection = () => {
   return (

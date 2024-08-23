@@ -21,7 +21,7 @@ export default function CircleShowIcon({
         strokeLinecap="round"
         strokeDasharray={`${
           type === "half" ? percentage / 2 : percentage
-        }, 100`}
+        }, 100 `}
       />
     </svg>
   );

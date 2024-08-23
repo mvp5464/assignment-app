@@ -14,7 +14,7 @@ const CardsTopCard = ({
     <div className="flex justify-between items-centers">
       <div>
         <div className="font-[500] text-lg mb-1">{title}</div>
-        <div className={`${subTitle ? "" : "hidden"} text-secondary text-xs`}>
+        <div className={`${subTitle ? "" : "hidden"} text-lightGray text-xs`}>
           {subTitle}
         </div>
       </div>

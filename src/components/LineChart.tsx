@@ -23,9 +23,6 @@ const LineChart = ({
         borderColor: ["#2086BF"],
         borderWidth: 3,
         tension: 0.5,
-        // borderDash: [1, 2, 3],
-        // clip: 10,
-        // drawActiveElementsOnTop: true,
       },
       {
         label: "Sales",
@@ -39,15 +36,19 @@ const LineChart = ({
   };
 
   const options = {
+    // aspectRatio: 3,
+    maintainAspectRatio: true,
     responsive: true,
     plugins: {
       legend: {
-        //   position: "top-left",
+        position: "top",
+        align: "end",
+        labels: {
+          boxWidth: 5,
+          boxHeight: 5,
+          usePointStyle: true,
+        },
       },
-      //   title: {
-      //     display: true,
-      //     text: "Pie Chart Example",
-      //   },
     },
   };
   //@ts-ignore

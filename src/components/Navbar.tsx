@@ -7,7 +7,7 @@ import SearchIcon from "./icons/SearchIcon";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between  mb-5">
+    <div className="md:flex justify-between  mb-5">
       <div className="flex gap-2  items-center">
         <SearchIcon />
         <input type="text" placeholder="Search" className="bg-[#f7f7fa]" />

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import EyeIcon from "../icons/EyeIcon";
 import TrashIcon from "../icons/TrashIcon";
 
@@ -18,7 +18,7 @@ const RecentOrdersCard = ({
   status: "Processing" | "Shiped" | "Delivered";
 }) => {
   return (
-    <div className="border-b">
+    <div className="border-b overflow-y-auto">
       <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] justify-center items-center py-3">
         <div className="flex items-center gap-2">
           <div className="h-10 w-10 rounded-lg bg-[#E0E2E7]" />
@@ -26,7 +26,7 @@ const RecentOrdersCard = ({
             <div className="text-xs mb-1 font-[500] text-[#1D1F2C]">
               {productName}
             </div>
-            <div className="text-[0.65rem] text-secondary">
+            <div className="text-[0.65rem] text-lightGray">
               {productDetails}
             </div>
           </div>
@@ -35,9 +35,9 @@ const RecentOrdersCard = ({
           <div className="text-xs mb-1 font-[450] text-[#1D1F2C]">
             {customerName}
           </div>
-          <div className="text-[0.65rem] text-secondary">{customerEmail}</div>
+          <div className="text-[0.65rem] text-lightGray">{customerEmail}</div>
         </div>
-        <div className="text-secondary text-xs font-[500]">
+        <div className="text-lightGray text-xs font-[500]">
           ${total.toFixed(2)}
         </div>
         <div>

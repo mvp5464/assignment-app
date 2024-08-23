@@ -24,14 +24,12 @@ const StatisticSection = () => {
   });
 
   return (
-    <Wrapper>
-      <div>
+    <div className="w-full h-full">
+      <Wrapper>
         <CardsTopCard title={"Statistic"} subTitle={"Revenue and Sales"} />
-      </div>
-      <div className="h-[90%] w-[100%]">
         <LineChart userData={userData.myData} userLables={userData.myLabel} />
-      </div>
-    </Wrapper>
+      </Wrapper>
+    </div>
   );
 };
 

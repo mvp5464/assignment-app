@@ -1,6 +1,4 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import Navbar from "./Navbar";
 import TitleSection from "./sections/TitleSection";
 import MainInfoSection from "./sections/MainInfoSection";
 import TargetSection from "./sections/TargetSection";
@@ -15,20 +13,21 @@ const Dashboard = () => {
   return (
     <div>
       <div className="mb-6">
+        {/* <SheetSide /> */}
         <TitleSection />
       </div>
       <div className="mb-6">
         <MainInfoSection />
       </div>
-      <div className="grid grid-cols-[1fr,2fr] h-80 gap-6 mb-6">
-        <div className="h-80">
+      <div className="md:grid md:grid-cols-[1fr,2fr]  gap-6 mb-6">
+        <div>
           <TargetSection />
         </div>
-        <div className="h-80">
+        <div>
           <StatisticSection />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-6 mb-6">
+      <div className="md:grid md:grid-cols-3 gap-6 mb-6">
         <div>
           <SalesSourceSection />
         </div>
@@ -39,7 +38,7 @@ const Dashboard = () => {
           <TopCategorySection />
         </div>
       </div>
-      <div className="grid grid-cols-[2fr,1fr] gap-6 mb-4s">
+      <div className="md:grid md:grid-cols-[2fr,1fr] gap-6 mb-4s">
         <div>
           <RecentOrdersSection />
         </div>

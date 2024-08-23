@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="grid grid-cols-[2fr,9fr] font-sans ">
+        <div className="grid md:grid-cols-[2fr,9fr] grid-cols-1 font-sans ">
           <div>
             <Sidebar />
           </div>
