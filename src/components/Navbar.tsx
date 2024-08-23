@@ -7,13 +7,13 @@ import SearchIcon from "./icons/SearchIcon";
 
 const Navbar = () => {
   return (
-    <div className="md:flex justify-between  mb-5">
+    <div className="flex justify-between items-center  mb-5">
       <div className="flex gap-2  items-center">
         <SearchIcon />
         <input type="text" placeholder="Search" className="bg-[#f7f7fa]" />
       </div>
-      <div className="flex gap-2 ">
-        <div className="flex gap-6 justify-center h-10 items-center ">
+      <div className="flex items-center gap-2 ">
+        <div className="md:flex gap-6 justify-center h-10 items-center hidden ">
           <div>
             <CalendarIcon />
           </div>
@@ -33,12 +33,12 @@ const Navbar = () => {
             <div className="bg-[#E0E2E7] mx-2 h-6 w-6 rounded-full" />
           </div>
         </div>
-        <div className="flex justify-center items-center gap-2 border-l pl-2">
+        <div className="flex justify-center items-center gap-2 md:border-l pl-2">
           <div className="relative">
             <div className="bg-[#E0E2E7] mx-2 h-8 w-8 rounded-full" />
             <span className=" absolute -bottom-[0.1rem] right-2 bg-[#22CAAD] text-white text-xs py-[0.3rem] px-[0.3rem] rounded-full leading-3 border-[2px] border-white" />
           </div>
-          <div>
+          <div className="md:block hidden">
             <div className="text-sm ">Jenil Patel</div>
             <div className="text-xs">Manager</div>
           </div>

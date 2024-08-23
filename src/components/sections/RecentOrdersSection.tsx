@@ -28,8 +28,8 @@ const RecentOrdersSection = () => {
           </div>
         </div>
       </div>
-      <div className="overflow-x-auto">
-        <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] gap-5 py-3 -mx-4 px-4 bg-[#F0F1F3]">
+      <div className="overflow-x-auto -mx-4 px-4">
+        <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] gap-5 py-3  bg-[#F0F1F3]">
           <div className="flex justify-between items-center ml-4s text-sm">
             <span>Product</span>
             <ArrowDownIcon className="w-4 h-4" />
@@ -45,7 +45,7 @@ const RecentOrdersSection = () => {
           </div>
           <div>Action</div>
         </div>
-        <div className=" w-[30rem">
+        <div className=" w-[44rem]s">
           <RecentOrdersCard
             productName={"Handmande Pouch"}
             productDetails={"+3 other products"}

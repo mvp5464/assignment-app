@@ -37,7 +37,7 @@ const Dashboard = () => {
           <TopCategorySection />
         </div>
       </div>
-      <div className="grid md:grid-cols-[2fr,1fr] grid-cols-1 md:grid-rows-1 grid-rows-[1fr,1fr] gap-6 mb-4s">
+      <div className="grid md:grid-cols-[2fr,1fr] grid-cols-1 md:grid-rows-1 grid-rows-[1fr,1fr] gap-6 ">
         <div>
           <RecentOrdersSection />
         </div>

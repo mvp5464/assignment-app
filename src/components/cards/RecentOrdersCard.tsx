@@ -19,7 +19,7 @@ const RecentOrdersCard = ({
 }) => {
   return (
     <div className="border-b">
-      <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] justify-center items-center py-3">
+      <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] justify-st items-center py-3">
         <div className="flex items-center gap-2">
           <div className="h-10 w-10 rounded-lg bg-[#E0E2E7]" />
           <div className="">
