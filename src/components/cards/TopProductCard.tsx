@@ -10,7 +10,7 @@ const TopProductCard = ({
   digit: string;
 }) => {
   return (
-    <div className="flex gap-3 justify-betweena items-center">
+    <div className="flex gap-3 justify-betweena items-center hover:shadow-lg rounded-lg transition 0.2s ease-linear">
       <div className="h-10 w-10 rounded-lg bg-[#E0E2E7]" />
       <div className="grow">
         <div className="text-sm ">{title}</div>

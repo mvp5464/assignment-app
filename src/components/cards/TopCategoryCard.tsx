@@ -16,12 +16,11 @@ const TopCategoryCard = ({
   textColor: string;
 }) => {
   return (
-    <div className="flex justify-between items-center gap-3 text-xs">
+    <div className="flex justify-between items-center gap-3 text-xs hover:shadow-lg rounded-lg transition 0.2s ease-linear">
       <div className={`${bgColor && bgColor} p-2 rounded-full`}>{icon}</div>
       <div className="grow ">{title}</div>
       <div>{digit}</div>
       <div
-        // className={`bg-[#F0F1F3] font-[500] text-[#4A4C56] text-xs p-1 rounded-lg`}
         className={`${bgColor && bgColor} font-[500] ${
           textColor && textColor
         } text-xs p-1 rounded-lg`}

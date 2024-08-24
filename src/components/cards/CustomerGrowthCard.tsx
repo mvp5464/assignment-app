@@ -12,7 +12,7 @@ const CustomerGrowthCard = ({
   color: string;
 }) => {
   return (
-    <div className="flex justify-between items-center my-4">
+    <div className="flex justify-between items-center my-4 hover:shadow-lg rounded-lg transition 0.2s ease-linear">
       <div className="flex justify-center items-center">
         <div className="bg-[#E0E2E7] mx-2 h-8 w-8 rounded-full" />
         <div>
@@ -23,7 +23,7 @@ const CustomerGrowthCard = ({
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <div className="h-2 rounded-full w-20 overflow-hidden bg-fuchsia-200">
+        <div className="h-2 rounded-full w-20 overflow-hidden bg-[#E0E2E7]">
           <div
             className={`h-2 ${percentage && percentage} ${color && color}`}
           />

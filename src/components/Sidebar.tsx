@@ -21,7 +21,7 @@ const Sidebar = () => {
   };
 
   return (
-    <>
+    <div className="sticky top-0 left-0">
       <div className="flex p-5 gap-3 mb-4">
         <div>
           <Logo className="w-8 h-8" />
@@ -85,7 +85,7 @@ const Sidebar = () => {
           onClick={() => handleOnClick("/calender")}
         />
       </div>
-    </>
+    </div>
   );
 };
 

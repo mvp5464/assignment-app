@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="grid md:grid-cols-[2fr,9fr] grid-cols-1 font-sans ">
-          <div className="bg-white min-h-screen sticky top-0 left-0 md:block hidden">
+          <div className="bg-white min-h-screen  md:block hidden">
             <Sidebar />
           </div>
           <div className="p-6">
