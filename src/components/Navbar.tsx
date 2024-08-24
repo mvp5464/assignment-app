@@ -13,8 +13,8 @@ import ThreeBarsIcon from "./icons/ThreeBarsIcon";
 const Navbar = () => {
   return (
     <div>
-      <div className="flex justify-between items-center  mb-5">
-        <div className="flex gap-2 justify-center items-center">
+      <div className="flex justify-between items-center mb-5">
+        <div className="flex gap-2 justify-center items-center md:ml-0 -ml-4">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" className="md:hidden block px-3">
