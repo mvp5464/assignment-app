@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -7,8 +6,8 @@ import BellIcon from "./icons/BellIcon";
 import MessageIcon from "./icons/MessageIcon";
 import ArrowDownIcon from "./icons/ArrowDownIcon";
 import SearchIcon from "./icons/SearchIcon";
-import Sidebar from "./Sidebar";
 import ThreeBarsIcon from "./icons/ThreeBarsIcon";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   return (
@@ -21,7 +20,7 @@ const Navbar = () => {
                 <ThreeBarsIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="overflow-auto w-2/3">
               <Sidebar />
             </SheetContent>
           </Sheet>
