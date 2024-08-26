@@ -17,7 +17,9 @@ const TopCategoryCard = ({
 }) => {
   return (
     <div className="flex justify-between items-center gap-3 text-xs hover:shadow-lg rounded-lg transition 0.2s ease-linear">
-      <div className={`${bgColor && bgColor} p-2 rounded-full`}>{icon}</div>
+      <div className={`${bgColor && bgColor} p-2 rounded-full`}>
+        {icon && icon}
+      </div>
       <div className="grow ">{title}</div>
       <div>{digit}</div>
       <div

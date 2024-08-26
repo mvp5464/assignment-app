@@ -3,8 +3,9 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import { AccordionContent, AccordionTrigger } from "../ui/accordion";
 import SidebarButtonCard from "./SidebarButtonCard";
+import { SheetClose } from "../ui/sheet";
 
-const SidebarCard = ({
+const ResponsiveSidebarCard = ({
   menu,
   subMenu,
   image,
@@ -19,12 +20,14 @@ const SidebarCard = ({
   return (
     <div className="block">
       {!subMenu ? (
-        <SidebarButtonCard
-          menu={menu}
-          notification={notification}
-          selected={path === `/${menu.link}` && true}
-          image={image}
-        />
+        <SheetClose asChild>
+          <SidebarButtonCard
+            menu={menu}
+            notification={notification}
+            selected={path === `/${menu.link}` && true}
+            image={image}
+          />
+        </SheetClose>
       ) : (
         <>
           <AccordionTrigger className="p-0">
@@ -37,11 +40,13 @@ const SidebarCard = ({
           <div>
             {subMenu?.map((item) => (
               <AccordionContent key={item.link} className="p-0">
-                <SidebarButtonCard
-                  menu={item}
-                  notification={notification}
-                  selected={path === `/${item.link}` && true}
-                />
+                <SheetClose asChild>
+                  <SidebarButtonCard
+                    menu={item}
+                    notification={notification}
+                    selected={path === `/${item.link}` && true}
+                  />
+                </SheetClose>
               </AccordionContent>
             ))}
           </div>
@@ -51,4 +56,4 @@ const SidebarCard = ({
   );
 };
 
-export default SidebarCard;
+export default ResponsiveSidebarCard;

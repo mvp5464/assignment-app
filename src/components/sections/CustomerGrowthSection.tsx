@@ -3,6 +3,7 @@ import CardsTopCard from "../cards/CardsTopCard";
 import CustomerGrowthCard from "../cards/CustomerGrowthCard";
 import Wrapper from "../Wrapper";
 import MapIcon from "../icons/MapIcon";
+import { customerGrowthData } from "@/utils/CustomerGrowthData";
 
 const CustomerGrowthSection = () => {
   return (
@@ -12,36 +13,15 @@ const CustomerGrowthSection = () => {
         <MapIcon className=" w-full h-full" />
       </div>
       <div>
-        <CustomerGrowthCard
-          color={"bg-[#22CAAD]"}
-          country={"USA"}
-          customers={"1,240"}
-          percentage={"w-[80%]"}
-        />
-        <CustomerGrowthCard
-          color={"bg-[#F86624]"}
-          country={"Japan"}
-          customers={"1,240"}
-          percentage={"w-[60%]"}
-        />
-        <CustomerGrowthCard
-          color={"bg-[#F9C80E]"}
-          country={"France"}
-          customers={"1,240"}
-          percentage={"w-[49%]"}
-        />
-        <CustomerGrowthCard
-          color={"bg-[#2086BF]"}
-          country={"Germany"}
-          customers={"1,240"}
-          percentage={"w-[100%]"}
-        />
-        <CustomerGrowthCard
-          color={"bg-[#EB3D4D]"}
-          country={"South Korea"}
-          customers={"1,240"}
-          percentage={"w-[50%]"}
-        />
+        {customerGrowthData.map((val) => (
+          <CustomerGrowthCard
+            key={val.id}
+            color={val.color}
+            country={val.country}
+            customers={val.customers}
+            percentage={val.percentage.toString()}
+          />
+        ))}
       </div>
     </Wrapper>
   );

@@ -9,7 +9,7 @@ const SalesSourceSection = () => {
     <Wrapper>
       <div className=" flex flex-col justify-center h-full ">
         <CardsTopCard title="Sales Source" />
-        <div className="grow min-h-48 flex flex-col justify-center items-center relative w-full">
+        <div className="grow min-h-48 md:h-60 h-56 mb-10 flex flex-col justify-center items-center relative w-full">
           <CircleShowIcon
             type="full"
             percentage={100}

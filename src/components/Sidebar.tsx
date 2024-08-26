@@ -2,10 +2,10 @@ import { navbarData } from "@/utils/NavbarData";
 import { Accordion, AccordionItem } from "./ui/accordion";
 import Logo from "./icons/Logo";
 import { LazySvg } from "./lazy-svg";
-import { Suspense } from "react";
 import SidebarCard from "./cards/SidebarCard";
+import ResponsiveSidebarCard from "./cards/ResponsiveSidebarCard";
 
-const Sidebar = () => {
+const Sidebar = ({ isResponsive = false }: { isResponsive?: boolean }) => {
   return (
     <Accordion type="single" collapsible className="mr-4 sticky top-0 left-0">
       <AccordionItem value="logo" className="border-none">
@@ -22,17 +22,23 @@ const Sidebar = () => {
           value={val.menu.title}
           className="border-none"
         >
-          <SidebarCard
-            key={val.menu.title}
-            menu={val.menu}
-            subMenu={val.subMenu}
-            notification={0}
-            image={
-              <Suspense fallback={<>Loading...</>}>
-                <LazySvg name={val.menu.image} />
-              </Suspense>
-            }
-          />
+          {isResponsive ? (
+            <ResponsiveSidebarCard
+              key={val.menu.title}
+              menu={val.menu}
+              subMenu={val.subMenu}
+              notification={0}
+              image={<LazySvg name={val.menu.image} />}
+            />
+          ) : (
+            <SidebarCard
+              key={val.menu.title}
+              menu={val.menu}
+              subMenu={val.subMenu}
+              notification={0}
+              image={<LazySvg name={val.menu.image} />}
+            />
+          )}
         </AccordionItem>
       ))}
     </Accordion>

@@ -13,14 +13,14 @@ const Navbar = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-5">
-        <div className="flex gap-2 justify-center items-center md:ml-0 -ml-4">
+        <div className="flex gap-2 justify-center items-center md:ml-0 -ml-8">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" className="md:hidden block px-3">
                 <ThreeBarsIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="overflow-auto w-2/3">
+            <SheetContent side="left" className="overflow-auto w-2/3 px-0">
               <Sidebar />
             </SheetContent>
           </Sheet>

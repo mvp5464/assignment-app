@@ -5,6 +5,7 @@ import ArrowDownIcon from "../icons/ArrowDownIcon";
 import FilterIcon from "../icons/FilterIcon";
 import ThreeDotsIcon from "../icons/ThreeDotsIcon";
 import { DatePickerWithRange } from "../DatePicker";
+import { recentOrdersData } from "@/utils/RecentOrdersData";
 
 const RecentOrdersSection = () => {
   return (
@@ -31,39 +32,34 @@ const RecentOrdersSection = () => {
         </div>
       </div>
       <div className="md:overflow-hidden overflow-x-auto -mx-4 px-4 ">
-        <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] px-2 gap-5 py-3 min-w-[30rem] md:w-[100vh] bg-[#F0F1F3]">
-          <div className="flex justify-between items-center ml-4s text-sm">
+        <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] px-2 gap-5 text-sm py-3 min-w-[30rem] md:w-[100vh] bg-[#F0F1F3]">
+          <div className="flex justify-between items-center">
             <span>Product</span>
             <ArrowDownIcon className="w-4 h-4" />
           </div>
           <div>Customer</div>
-          <div className="flex justify-between items-center ml-4 text-sm">
+          <div className="flex justify-between items-center">
             <span>Total</span>
             <ArrowDownIcon className="w-4 h-4" />
           </div>
-          <div className="flex justify-between items-center ml-4 text-sm">
+          <div className="flex justify-between items-center">
             <span>Status</span>
             <ArrowDownIcon className="w-4 h-4" />
           </div>
-          <div>Action</div>
+          <div className="text-right mr-4">Action</div>
         </div>
         <div className="min-w-[30rem] mb-4">
-          <RecentOrdersCard
-            productName={"Handmande Pouch"}
-            productDetails={"+3 other products"}
-            customerName={"John Bushmill"}
-            customerEmail={"Johnb@gmail.com"}
-            total={121}
-            status={"Processing"}
-          />
-          <RecentOrdersCard
-            productName={"Smartwatch E2"}
-            productDetails={"+1 other products"}
-            customerName={"Ilham BUdi Agung"}
-            customerEmail={"ilahmbudi@gmail.com"}
-            total={590}
-            status={"Processing"}
-          />
+          {recentOrdersData.map((val) => (
+            <RecentOrdersCard
+              key={val.id}
+              productName={val.productName}
+              productDetails={val.productDetails || ""}
+              customerName={val.customerName}
+              customerEmail={val.customerEmail}
+              total={val.total}
+              status={val.status}
+            />
+          ))}
         </div>
       </div>
 
