@@ -19,7 +19,7 @@ const CustomerGrowthSection = () => {
             color={val.color}
             country={val.country}
             customers={val.customers}
-            percentage={val.percentage.toString()}
+            percentage={val.percentage}
           />
         ))}
       </div>
