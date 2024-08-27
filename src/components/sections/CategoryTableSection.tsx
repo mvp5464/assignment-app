@@ -104,7 +104,7 @@ const CategoryTableSection = () => {
           </button>
           <div className="flex justify-end items-center pr-4">Action</div>
         </div>
-        <div className="min-w-[30rem] mb-4">
+        <div className="min-w-[40rem] mb-4">
           {sortedCategoryData.map((val) => (
             <CategorySectionCard
               key={val.id}
@@ -118,7 +118,7 @@ const CategoryTableSection = () => {
             />
           ))}
         </div>
-        <div className="p-4">
+        <div className="p-4 min-w-[40rem]">
           <Pagination itemsPerPage={10} totalItems={100} totalButton={5} />
         </div>
       </div>

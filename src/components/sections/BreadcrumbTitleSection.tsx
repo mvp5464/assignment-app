@@ -12,7 +12,7 @@ import PlusIcon from "../icons/PlusIcon";
 
 const BreadcrumbTitleSection = () => {
   return (
-    <div className="flex justify-between mb-4">
+    <div className="flex md:flex-row flex-col gap-4  justify-between md:items-center items-start mb-4">
       <div>
         <div className="text-2xl font-[500] mb-2">Categories</div>
         <div>
@@ -36,7 +36,7 @@ const BreadcrumbTitleSection = () => {
           </Breadcrumb>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-3 font-[500]">
+      <div className="flex items-center md:justify-center justify-between md:w-auto w-full gap-3 font-[500]">
         <button className="bg-lightBlue px-3 py-3 rounded-lg flex justify-center items-center text-xs gap-2 text-darkBlue">
           <DownloadIcon className="w-4 h-4" />
           <span>Export</span>
