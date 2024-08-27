@@ -1,13 +1,13 @@
 import React from "react";
-import TitleSection from "./sections/TitleSection";
-import MainInfoSection from "./sections/MainInfoSection";
-import TargetSection from "./sections/TargetSection";
-import StatisticSection from "./sections/StatisticSection";
-import SalesSourceSection from "./sections/SalesSourceSection";
-import TopProductSection from "./sections/TopProductSection";
-import TopCategorySection from "./sections/TopCategorySection";
-import RecentOrdersSection from "./sections/RecentOrdersSection";
-import CustomerGrowthSection from "./sections/CustomerGrowthSection";
+import TitleSection from "../sections/TitleSection";
+import MainInfoSection from "../sections/MainInfoSection";
+import TargetSection from "../sections/TargetSection";
+import StatisticSection from "../sections/StatisticSection";
+import SalesSourceSection from "../sections/SalesSourceSection";
+import TopProductSection from "../sections/TopProductSection";
+import TopCategorySection from "../sections/TopCategorySection";
+import RecentOrdersSection from "../sections/RecentOrdersSection";
+import CustomerGrowthSection from "../sections/CustomerGrowthSection";
 
 const Dashboard = () => {
   return (

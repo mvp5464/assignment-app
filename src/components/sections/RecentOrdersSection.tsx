@@ -5,7 +5,8 @@ import ArrowDownIcon from "../icons/ArrowDownIcon";
 import FilterIcon from "../icons/FilterIcon";
 import ThreeDotsIcon from "../icons/ThreeDotsIcon";
 import { DatePickerWithRange } from "../DatePicker";
-import { recentOrdersData } from "@/utils/RecentOrdersData";
+import { recentOrdersData } from "@/utils/data/RecentOrdersData";
+import Pagination from "../Pagination";
 
 const RecentOrdersSection = () => {
   return (
@@ -62,30 +63,7 @@ const RecentOrdersSection = () => {
           ))}
         </div>
       </div>
-
-      <div className="flex justify-between items-center mt-4">
-        <div className="text-sm text-lightGray">Showing 1-5 from 100</div>
-        <div className="flex justify-center items-center  gap-2">
-          <div className="bg-[#EAF8FF] text-[#2086BF] h-[1.8rem] w-[1.8rem] rounded-lg flex justify-center items-center text-xs ">
-            <ArrowDownIcon className="w-4 h-4 rotate-90" color={"#2086BF"} />
-          </div>
-          <div className="bg-[#2086BF] text-[#EAF8FF] h-[1.8rem] w-[1.8rem] rounded-lg flex justify-center items-center text-xs ">
-            1
-          </div>
-          <div className="bg-[#EAF8FF] text-[#2086BF] h-[1.8rem] w-[1.8rem] rounded-lg flex justify-center items-center text-xs ">
-            2
-          </div>
-          <div className="bg-[#EAF8FF] text-[#2086BF] h-[1.8rem] w-[1.8rem] rounded-lg flex justify-center items-center text-xs ">
-            3
-          </div>
-          <div className="bg-[#EAF8FF] text-[#2086BF] h-[1.8rem] w-[1.8rem] rounded-lg flex justify-center items-center text-xs ">
-            ...
-          </div>
-          <div className="bg-[#EAF8FF] text-[#2086BF] h-[1.8rem] w-[1.8rem] rounded-lg flex justify-center items-center text-xs ">
-            <ArrowDownIcon className="w-4 h-4 -rotate-90" color={"#2086BF"} />
-          </div>
-        </div>
-      </div>
+      <Pagination itemsPerPage={5} totalItems={100} totalButton={3} />
     </Wrapper>
   );
 };

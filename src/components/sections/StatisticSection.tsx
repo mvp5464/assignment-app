@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import CardsTopCard from "../cards/CardsTopCard";
 import Wrapper from "../Wrapper";
 import LineChart from "../LineChart";
-import { RevenueData, SalesData } from "@/utils/UserInfo";
+import { RevenueData, SalesData } from "@/utils/data/UserInfo";
 
 interface UserInterface {
   myLabel: string[];

@@ -3,7 +3,7 @@ import CardsTopCard from "../cards/CardsTopCard";
 import CustomerGrowthCard from "../cards/CustomerGrowthCard";
 import Wrapper from "../Wrapper";
 import MapIcon from "../icons/MapIcon";
-import { customerGrowthData } from "@/utils/CustomerGrowthData";
+import { customerGrowthData } from "@/utils/data/CustomerGrowthData";
 
 const CustomerGrowthSection = () => {
   return (

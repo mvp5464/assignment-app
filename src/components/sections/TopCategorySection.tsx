@@ -2,7 +2,7 @@ import React from "react";
 import CardsTopCard from "../cards/CardsTopCard";
 import TopCategoryCard from "../cards/TopCategoryCard";
 import Wrapper from "../Wrapper";
-import { topCategoryData } from "@/utils/TopCategoryData";
+import { topCategoryData } from "@/utils/data/TopCategoryData";
 import { LazySvg } from "../lazy-svg";
 
 const TopCategorySection = () => {

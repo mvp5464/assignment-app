@@ -21,7 +21,7 @@ const RecentOrdersCard = ({
     <div className="border-b hover:shadow-lg rounded-lg transition 0.2s ease-linear">
       <div className="grid grid-cols-[4fr,3fr,2fr,2fr,2fr] items-center py-3">
         <div className="flex items-center gap-2">
-          <div className="h-10 w-10 rounded-lg bg-[#E0E2E7]" />
+          <div className="h-10 w-10 rounded-lg bg-[#E0E2E7] shrink-0" />
           <div className="">
             <div className="text-xs mb-1 font-[500] text-[#1D1F2C]">
               {productName}

@@ -1,7 +1,7 @@
 import React from "react";
 import MainInfoCard from "../cards/MainInfoCard";
 import { LazySvg } from "../lazy-svg";
-import { mainInfoData } from "@/utils/MainInfoData";
+import { mainInfoData } from "@/utils/data/MainInfoData";
 
 const MainInfoSection = () => {
   return (

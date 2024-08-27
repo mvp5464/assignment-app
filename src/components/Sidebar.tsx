@@ -1,4 +1,4 @@
-import { navbarData } from "@/utils/NavbarData";
+import { navbarData } from "@/utils/data/NavbarData";
 import { Accordion, AccordionItem } from "./ui/accordion";
 import Logo from "./icons/Logo";
 import { LazySvg } from "./lazy-svg";

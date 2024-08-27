@@ -2,7 +2,7 @@ import React from "react";
 import CardsTopCard from "../cards/CardsTopCard";
 import TopProductCard from "../cards/TopProductCard";
 import Wrapper from "../Wrapper";
-import { topProductData } from "@/utils/TopProductData";
+import { topProductData } from "@/utils/data/TopProductData";
 
 const TopProductSection = () => {
   return (

@@ -3,6 +3,7 @@ interface MenuWithLinkType {
   link: string;
   image: string;
 }
+
 interface MenuWithLinkwithoutImageType {
   title: string;
   link: string;
@@ -25,9 +26,9 @@ export const navbarData: NavbarType[] = [
   {
     menu: { title: "E-Commerce", image: "ECommerceIcon" },
     subMenu: [
-      { title: "Product", link: "dashboard/product" },
+      { title: "Product", link: "dashboard/product_list" },
       { title: "Categories", link: "dashboard/categories" },
-      { title: "Orders", link: "dashboard/orders" },
+      { title: "Orders", link: "dashboard/orders_list" },
       { title: "Customer", link: "dashboard/customer" },
     ],
   },
