@@ -1,10 +1,10 @@
-import BreadcrumbTitleSection from "../sections/BreadcrumbTitleSection";
-import CategoryTableSection from "../sections/CategoryTableSection";
+import CategoryHeroSection from "../sections/category/CategoryHeroSection";
+import CategoryTableSection from "../sections/category/CategoryTableSection";
 
 const Categories = () => {
   return (
     <>
-      <BreadcrumbTitleSection />
+      <CategoryHeroSection />
       <CategoryTableSection />
     </>
   );

@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import ArrowDownIcon from "../icons/ArrowDownIcon";
+import ArrowDownIcon from "../../icons/ArrowDownIcon";
 import {
   categorySectionData,
   CategorySectionDataType,
 } from "@/utils/data/CategorySectionData";
-import CategorySectionCard from "../cards/CategorySectionCard";
-import Pagination from "../Pagination";
-import MinusIcon from "../icons/MinusIcon";
+import CategorySectionCard from "../../cards/CategorySectionCard";
+import Pagination from "../../Pagination";
+import MinusIcon from "../../icons/MinusIcon";
 
 const CategoryTableSection = () => {
   const [isClicked, setIsClicked] = useState<number[]>([]);

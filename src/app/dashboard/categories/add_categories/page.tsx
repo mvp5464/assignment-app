@@ -1,7 +1,8 @@
+import AddCategory from "@/components/pages/AddCategory";
 import React from "react";
 
-const AddCategories = () => {
-  return <div>AddCategories</div>;
+const AddCategoriesPage = () => {
+  return <AddCategory />;
 };
 
-export default AddCategories;
+export default AddCategoriesPage;
