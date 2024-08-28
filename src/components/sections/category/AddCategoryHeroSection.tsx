@@ -1,13 +1,16 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import BreadcrumbTitleSection from "../BreadcrumbTitleSection";
 import PlusIcon from "@/components/icons/PlusIcon";
 import CancelIcon from "@/components/icons/CancelIcon";
 import { addCategory } from "@/actions/categories";
 import { CategoryContext } from "@/context/CategoryContextProvider";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const AddCategoryHeroSection = () => {
   const { category } = useContext(CategoryContext);
+  const router = useRouter();
 
   return (
     <>
@@ -21,10 +24,13 @@ const AddCategoryHeroSection = () => {
           title={"Add Category"}
         />
         <div className="flex items-center md:justify-center justify-between md:w-auto w-full gap-3 font-[500]">
-          <button className="border px-3 py-3 rounded-lg flex justify-center items-center text-xs gap-2 text-lightGray">
+          <Link
+            href={"/dashboard/categories"}
+            className="border px-3 py-3 rounded-lg flex justify-center items-center text-xs gap-2 text-lightGray"
+          >
             <CancelIcon className="w-4 h-4" />
             <span>Cancel</span>
-          </button>
+          </Link>
           <button
             className="bg-darkBlue px-3 py-3 rounded-lg flex justify-center items-center text-white text-xs gap-2"
             onClick={async () => {
@@ -36,7 +42,9 @@ const AddCategoryHeroSection = () => {
                 categoryName: category.categoryName,
                 categoryDescription: category.description as string,
               });
-              console.log({ data });
+              if (data) {
+                router.push("/dashboard/categories");
+              }
             }}
           >
             <PlusIcon className="w-4 h-4" />

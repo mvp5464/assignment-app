@@ -1,13 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ArrowDownIcon from "../../icons/ArrowDownIcon";
-import { CategorySectionDataType } from "@/utils/data/CategorySectionData";
-import CategorySectionCard from "../../cards/CategorySectionCard";
 import Pagination from "../../Pagination";
 import MinusIcon from "../../icons/MinusIcon";
-import { getCategory } from "@/actions/categories";
-import { dateFormatFunction } from "@/utils/functionUtils";
-import TableSkeleton from "@/components/TableSkeleton";
+import {
+  productSectionData,
+  ProductSectionDataType,
+} from "@/utils/data/ProductSectionData";
+import ProductSectionCard from "@/components/cards/ProductSectionCard";
 
 export type CategoryApiType = {
   id: string;
@@ -19,21 +19,10 @@ export type CategoryApiType = {
   updatedAt: Date;
 };
 
-const CategoryTableSection = () => {
+const ProductTableSection = () => {
   const [isClicked, setIsClicked] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [sortedCategoryData, setSortedCategoryData] =
-    useState<CategorySectionDataType[]>();
-
-  useEffect(() => {
-    const updateViews = async () => {
-      const { category } = await getCategory();
-      setSortedCategoryData(category);
-    };
-
-    updateViews();
-    setIsLoading(false);
-  }, []);
+    useState<ProductSectionDataType[]>(productSectionData);
 
   const handleAllSelect = () => {
     if (isClicked.length > 0) setIsClicked([]);
@@ -44,7 +33,7 @@ const CategoryTableSection = () => {
     }
   };
 
-  const handleCardSelect = (val: CategorySectionDataType) => {
+  const handleCardSelect = (val: ProductSectionDataType) => {
     const hasId = isClicked.find((id) => id === val.id);
     if (!hasId) {
       setIsClicked((ids) => [...ids, val.id]);
@@ -53,31 +42,39 @@ const CategoryTableSection = () => {
     }
   };
 
-  const handleCategorySort = () => {
+  const handleProductSort = () => {
     setSortedCategoryData(
-      sortedCategoryData
-        ?.slice()
-        .sort((a, b) => a.categoryName.localeCompare(b.categoryName))
-    );
-  };
-
-  const handleSoldSort = () => {
-    setSortedCategoryData(
-      sortedCategoryData?.slice().sort((a, b) => a.sold - b.sold)
+      productSectionData
+        .slice()
+        .sort((a, b) => a.productName.localeCompare(b.productName))
     );
   };
 
   const handleStockSort = () => {
     setSortedCategoryData(
-      sortedCategoryData?.slice().sort((a, b) => a.stock - b.stock)
+      productSectionData.slice().sort((a, b) => a.stock - b.stock)
+    );
+  };
+
+  const handlePriceSort = () => {
+    setSortedCategoryData(
+      productSectionData.slice().sort((a, b) => a.price - b.price)
+    );
+  };
+
+  const handleStatusSort = () => {
+    setSortedCategoryData(
+      productSectionData
+        .slice()
+        .sort((a, b) => a.status.localeCompare(b.status))
     );
   };
 
   const handleAddedSort = () => {
     new Date("19 Sep 2022").getTime();
     setSortedCategoryData(
-      sortedCategoryData
-        ?.slice()
+      productSectionData
+        .slice()
         .sort(
           (a, b) =>
             new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
@@ -85,10 +82,12 @@ const CategoryTableSection = () => {
     );
   };
 
+  console.log({ sortedCategoryData });
+
   return (
     <div className="bg-white rounded-xl py-4 w-full transition 0.2s ease-linear hover:shadow-lg">
       <div className="md:overflow-hidden overflow-x-auto">
-        <div className="grid grid-cols-[0.2fr,5fr,1fr,1fr,1fr,1fr] gap-5 text-xs font-[500] px-4 pb-4 min-w-[40rem]">
+        <div className="grid grid-cols-[0.2fr,2fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] gap-5 text-xs font-[500] px-4 pb-4 min-w-[40rem]">
           <button onClick={handleAllSelect}>
             <MinusIcon
               className={`w-4 h-4 px-[0.2rem] ${
@@ -98,23 +97,36 @@ const CategoryTableSection = () => {
           </button>
           <button
             className="flex justify-between items-center pr-4 cursor-pointer"
-            onClick={handleCategorySort}
+            onClick={handleProductSort}
           >
-            <span>Category Name</span>
+            <span>Product</span>
             <ArrowDownIcon className="w-4 h-4" />
           </button>
-          <button
-            className="flex justify-between items-center pr-4 "
-            onClick={handleSoldSort}
-          >
-            <span>Sold</span>
-            <ArrowDownIcon className="w-4 h-4" />
-          </button>
+          <div className="flex justify-between items-center pr-4 cursor-pointer">
+            SKU
+          </div>
+          <div className="flex justify-between items-center pr-4 cursor-pointer">
+            Category
+          </div>
           <button
             className="flex justify-between items-center pr-4"
             onClick={handleStockSort}
           >
             <span>Stock</span>
+            <ArrowDownIcon className="w-4 h-4" />
+          </button>
+          <button
+            className="flex justify-between items-center pr-4 "
+            onClick={handlePriceSort}
+          >
+            <span>Price</span>
+            <ArrowDownIcon className="w-4 h-4" />
+          </button>
+          <button
+            className="flex justify-between items-center pr-4 "
+            onClick={handleStatusSort}
+          >
+            <span>Status</span>
             <ArrowDownIcon className="w-4 h-4" />
           </button>
           <button
@@ -127,35 +139,28 @@ const CategoryTableSection = () => {
           <div className="flex justify-end items-center pr-4">Action</div>
         </div>
         <div className="min-w-[40rem] mb-4">
-          {isLoading && <TableSkeleton />}
           {sortedCategoryData?.map((val) => (
-            <CategorySectionCard
+            <ProductSectionCard
               key={val.id}
-              categoryName={val.categoryName}
-              categoryDescription={val.categoryDescription}
-              sold={val.sold.toLocaleString()}
-              stock={val.stock.toLocaleString()}
-              added={dateFormatFunction(val.createdAt)}
+              productName={val.productName}
+              productDescription={val.productDescription}
+              sku={val.sku}
+              category={val.category}
+              stock={val.stock}
+              price={val.price}
+              status={val.status}
+              added={val.createdAt}
               isClicked={isClicked.some((id) => id === val.id)}
               onClick={() => handleCardSelect(val)}
             />
           ))}
         </div>
         <div className="p-4 min-w-[40rem]">
-          <Pagination
-            itemsPerPage={
-              sortedCategoryData?.length
-                ? sortedCategoryData?.length <= 10
-                  ? sortedCategoryData?.length
-                  : 10
-                : 0
-            }
-            totalItems={sortedCategoryData?.length || 0}
-          />
+          <Pagination itemsPerPage={10} totalItems={100} totalButton={5} />
         </div>
       </div>
     </div>
   );
 };
 
-export default CategoryTableSection;
+export default ProductTableSection;

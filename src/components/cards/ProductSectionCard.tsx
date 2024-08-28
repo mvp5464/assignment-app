@@ -5,19 +5,25 @@ import TrashIcon from "../icons/TrashIcon";
 import TickIcon from "../icons/TickIcon";
 import PencilIcon from "../icons/PencilIcon";
 
-const CategorySectionCard = ({
-  categoryName,
-  categoryDescription,
-  sold,
+const ProductSectionCard = ({
+  productName,
+  productDescription,
+  sku,
+  category,
   stock,
+  price,
+  status,
   added,
   isClicked,
   onClick,
 }: {
-  categoryName: string;
-  categoryDescription?: string;
-  sold: string;
-  stock: string;
+  productName: string;
+  productDescription: string;
+  sku: number;
+  category: string;
+  stock: number;
+  price: number;
+  status: "Low Stock" | "Published" | "Draft" | "Out of Stock";
   added: string;
   isClicked: boolean;
   onClick: MouseEventHandler<HTMLButtonElement>;
@@ -26,11 +32,10 @@ const CategorySectionCard = ({
     icon: "pencil" | "eye" | "trash";
     isHovered: boolean;
   }>({ icon: "pencil", isHovered: false });
-
   return (
     <div className="border-b hover:shadow-lg transition 0.2s ease-linear">
       <div
-        className={`grid grid-cols-[0.2fr,8fr,1fr] gap-5 items-center py-3 p-4 min-w-[40rem] sbg-[#f9f9fc] ${
+        className={`grid grid-cols-[0.2fr,2fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] gap-5 items-center py-3 p-4 min-w-[40rem] sbg-[#f9f9fc] ${
           isClicked ? "bg-[#f4f4f8]" : ""
         }`}
       >
@@ -41,22 +46,23 @@ const CategorySectionCard = ({
             } rounded-sm`}
           />
         </button>
-        <div className="grid grid-cols-[5fr,1fr,1fr,1fr] gap-5 items-center ">
-          <div className="flex items-center gap-2">
-            <div className="h-10 w-10 rounded-lg bg-[#E0E2E7] shrink-0" />
-            <div className="">
-              <div className="text-xs mb-1 font-[500] text-[#1D1F2C]">
-                {categoryName}
-              </div>
-              <div className="text-[0.65rem] text-lightGray">
-                {categoryDescription}
-              </div>
+        <div className="flex items-center gap-2">
+          <div className="h-10 w-10 rounded-lg bg-[#E0E2E7] shrink-0" />
+          <div className="">
+            <div className="text-xs mb-1 font-[500] text-[#1D1F2C]">
+              {productName}
+            </div>
+            <div className="text-[0.65rem] text-lightGray">
+              {productDescription}
             </div>
           </div>
-          <div className="text-lightGray text-xs font-[500]">{sold}</div>
-          <div className="text-lightGray text-xs font-[500]">{stock}</div>
-          <div className="text-lightGray text-xs font-[500]">{added}</div>
         </div>
+        <div className="text-lightGray text-xs font-[500]">{sku}</div>
+        <div className="text-lightGray text-xs font-[500]">{category}</div>
+        <div className="text-lightGray text-xs font-[500]">{stock}</div>
+        <div className="text-lightGray text-xs font-[500]">{price}</div>
+        <div className="text-lightGray text-xs font-[500]">{status}</div>
+        <div className="text-lightGray text-xs font-[500]">{added}</div>
         <div className="flex justify-center items-center gap-3">
           <button
             onMouseEnter={() => setOnHover({ icon: "pencil", isHovered: true })}
@@ -105,4 +111,4 @@ const CategorySectionCard = ({
   );
 };
 
-export default CategorySectionCard;
+export default ProductSectionCard;
