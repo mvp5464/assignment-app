@@ -28,28 +28,7 @@ export const navbarData: NavbarType[] = [
     subMenu: [
       { title: "Categories", link: "dashboard/categories" },
       { title: "Product", link: "dashboard/product_list" },
-      { title: "Orders", link: "dashboard/orders_list" },
-      // { title: "Customer", link: "dashboard/customer" },
+      { title: "Orders", link: "dashboard/order_list" },
     ],
   },
-  // {
-  //   menu: { title: "Project", link: "project", image: "ProjectIcon" },
-  // },
-  // {
-  //   menu: { title: "Contact", image: "ContactIcon" },
-  //   subMenu: [{ title: "Contact Us", link: "contact" }],
-  // },
-  // {
-  //   menu: {
-  //     title: "File Manager",
-  //     link: "file_manager",
-  //     image: "FileManagerIcon",
-  //   },
-  // },
-  // {
-  //   menu: { title: "Chat", link: "chat", image: "ChatIcon" },
-  // },
-  // {
-  //   menu: { title: "Calendar", link: "calendar", image: "CalendarIcon" },
-  // },
 ];

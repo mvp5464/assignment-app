@@ -4,10 +4,10 @@ import ArrowDownIcon from "../../icons/ArrowDownIcon";
 import Pagination from "../../Pagination";
 import MinusIcon from "../../icons/MinusIcon";
 import {
-  productSectionData,
-  ProductSectionDataType,
-} from "@/utils/data/ProductSectionData";
-import ProductSectionCard from "@/components/cards/ProductSectionCard";
+  orderSectionData,
+  OrderSectionDataType,
+} from "@/utils/data/OrderSectionData";
+import OrderSectionCard from "@/components/cards/OrderSectionCard";
 
 export type CategoryApiType = {
   id: string;
@@ -19,21 +19,21 @@ export type CategoryApiType = {
   updatedAt: Date;
 };
 
-const ProductTableSection = () => {
+const OrderTableSection = () => {
   const [isClicked, setIsClicked] = useState<number[]>([]);
-  const [sortedCategoryData, setSortedCategoryData] =
-    useState<ProductSectionDataType[]>(productSectionData);
+  const [sortedOrderData, setSortedOrderData] =
+    useState<OrderSectionDataType[]>(orderSectionData);
 
   const handleAllSelect = () => {
     if (isClicked.length > 0) setIsClicked([]);
     else {
-      sortedCategoryData?.forEach((val) =>
+      sortedOrderData?.forEach((val) =>
         setIsClicked((ids) => [...ids, val.id])
       );
     }
   };
 
-  const handleCardSelect = (val: ProductSectionDataType) => {
+  const handleCardSelect = (val: OrderSectionDataType) => {
     const hasId = isClicked.find((id) => id === val.id);
     if (!hasId) {
       setIsClicked((ids) => [...ids, val.id]);
@@ -43,51 +43,46 @@ const ProductTableSection = () => {
   };
 
   const handleProductSort = () => {
-    setSortedCategoryData(
-      productSectionData
+    setSortedOrderData(
+      orderSectionData
         .slice()
         .sort((a, b) => a.productName.localeCompare(b.productName))
     );
   };
 
   const handleStockSort = () => {
-    setSortedCategoryData(
-      productSectionData.slice().sort((a, b) => a.stock - b.stock)
+    setSortedOrderData(
+      orderSectionData.slice().sort((a, b) => a.orderId - b.orderId)
     );
   };
 
-  const handlePriceSort = () => {
-    setSortedCategoryData(
-      productSectionData.slice().sort((a, b) => a.price - b.price)
+  const handleTotalSort = () => {
+    setSortedOrderData(
+      orderSectionData.slice().sort((a, b) => a.total - b.total)
     );
   };
 
   const handleStatusSort = () => {
-    setSortedCategoryData(
-      productSectionData
-        .slice()
-        .sort((a, b) => a.status.localeCompare(b.status))
+    setSortedOrderData(
+      orderSectionData.slice().sort((a, b) => a.status.localeCompare(b.status))
     );
   };
 
-  const handleAddedSort = () => {
+  const handleDateSort = () => {
     new Date("19 Sep 2022").getTime();
-    setSortedCategoryData(
-      productSectionData
+    setSortedOrderData(
+      orderSectionData
         .slice()
-        .sort(
-          (a, b) =>
-            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-        )
+        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     );
   };
 
-  console.log({ sortedCategoryData });
+  console.log({ sortedOrderData });
 
   return (
     <div className="bg-white rounded-xl py-4 w-full transition 0.2s ease-linear hover:shadow-lg">
       <div className="md:overflow-hidden overflow-x-auto">
-        <div className="grid grid-cols-[0.2fr,2fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] gap-5 text-xs font-[500] px-4 pb-4 min-w-[40rem]">
+        <div className="grid grid-cols-[0.2fr,0.7fr,2.3fr,1fr,1.3fr,1fr,1fr,1fr,0.5fr] gap-4 text-xs font-[500] px-4 pb-4 min-w-[40rem]">
           <button onClick={handleAllSelect}>
             <MinusIcon
               className={`w-4 h-4 px-[0.2rem] ${
@@ -95,6 +90,7 @@ const ProductTableSection = () => {
               }  rounded-sm`}
             />
           </button>
+          <div className="flex justify-between items-center pr-4">Order ID</div>
           <button
             className="flex justify-between items-center pr-4"
             onClick={handleProductSort}
@@ -102,22 +98,22 @@ const ProductTableSection = () => {
             <span>Product</span>
             <ArrowDownIcon className="w-4 h-4" />
           </button>
-          <div className="flex justify-between items-center pr-4">SKU</div>
-          <div className="flex justify-between items-center pr-4">Category</div>
           <button
             className="flex justify-between items-center pr-4"
-            onClick={handleStockSort}
+            onClick={handleDateSort}
           >
-            <span>Stock</span>
+            <span>Date</span>
             <ArrowDownIcon className="w-4 h-4" />
           </button>
+          <div className="flex justify-between items-center pr-4">Customer</div>
           <button
             className="flex justify-between items-center pr-4 "
-            onClick={handlePriceSort}
+            onClick={handleTotalSort}
           >
-            <span>Price</span>
+            <span>Total</span>
             <ArrowDownIcon className="w-4 h-4" />
           </button>
+          <div className="flex justify-between items-center pr-4">Payment</div>
           <button
             className="flex justify-between items-center pr-4 "
             onClick={handleStatusSort}
@@ -125,27 +121,20 @@ const ProductTableSection = () => {
             <span>Status</span>
             <ArrowDownIcon className="w-4 h-4" />
           </button>
-          <button
-            className="flex justify-between items-center pr-4"
-            onClick={handleAddedSort}
-          >
-            <span>Added</span>
-            <ArrowDownIcon className="w-4 h-4" />
-          </button>
           <div className="flex justify-end items-center pr-4">Action</div>
         </div>
         <div className="min-w-[40rem] mb-4">
-          {sortedCategoryData?.map((val) => (
-            <ProductSectionCard
+          {sortedOrderData?.map((val) => (
+            <OrderSectionCard
               key={val.id}
+              orderId={val.orderId}
               productName={val.productName}
               productDescription={val.productDescription}
-              sku={val.sku}
-              category={val.category}
-              stock={val.stock}
-              price={val.price}
+              date={val.date}
+              customer={val.customer}
+              total={val.total}
+              payment={val.payment}
               status={val.status}
-              added={val.createdAt}
               isClicked={isClicked.some((id) => id === val.id)}
               onClick={() => handleCardSelect(val)}
             />
@@ -159,4 +148,4 @@ const ProductTableSection = () => {
   );
 };
 
-export default ProductTableSection;
+export default OrderTableSection;

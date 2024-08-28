@@ -3,28 +3,27 @@ import React, { MouseEventHandler, useState } from "react";
 import EyeIcon from "../icons/EyeIcon";
 import TrashIcon from "../icons/TrashIcon";
 import TickIcon from "../icons/TickIcon";
-import PencilIcon from "../icons/PencilIcon";
 
-const ProductSectionCard = ({
+const OrderSectionCard = ({
+  orderId,
   productName,
   productDescription,
-  sku,
-  category,
-  stock,
-  price,
+  date,
+  customer,
+  total,
+  payment,
   status,
-  added,
   isClicked,
   onClick,
 }: {
+  orderId: number;
   productName: string;
   productDescription: string;
-  sku: number;
-  category: string;
-  stock: number;
-  price: number;
-  status: "Low Stock" | "Published" | "Draft" | "Out of Stock";
-  added: string;
+  date: string;
+  customer: string;
+  total: number;
+  payment: string;
+  status: "Processing" | "Delivered" | "Cancelled" | "Shiped" | "Published";
   isClicked: boolean;
   onClick: MouseEventHandler<HTMLButtonElement>;
 }) => {
@@ -35,7 +34,7 @@ const ProductSectionCard = ({
   return (
     <div className="border-b hover:shadow-lg transition 0.2s ease-linear">
       <div
-        className={`grid grid-cols-[0.2fr,2fr,1fr,1fr,1fr,1fr,1fr,1fr,1fr] gap-5 items-center py-3 p-4 min-w-[40rem] sbg-[#f9f9fc] ${
+        className={`grid grid-cols-[0.2fr,0.7fr,2.3fr,1fr,1.3fr,1fr,1fr,1fr,0.5fr] gap-4 items-center py-3 p-4 min-w-[40rem] sbg-[#f9f9fc] ${
           isClicked ? "bg-[#f4f4f8]" : ""
         }`}
       >
@@ -46,6 +45,7 @@ const ProductSectionCard = ({
             } rounded-sm`}
           />
         </button>
+        <div className="text-darkBlue text-xs font-[500]">{orderId}</div>
         <div className="flex items-center gap-2">
           <div className="h-10 w-10 rounded-lg bg-[#E0E2E7] shrink-0" />
           <div className="">
@@ -57,37 +57,22 @@ const ProductSectionCard = ({
             </div>
           </div>
         </div>
-        <div className="text-darkBlue text-xs font-[500]">{sku}</div>
-        <div className="text-lightGray text-xs font-[500]">{category}</div>
-        <div className="text-lightGray text-xs font-[500]">{stock}</div>
-        <div className="text-lightGray text-xs font-[500]">{price}</div>
+        <div className="text-lightGray text-xs font-[500]">{date}</div>
+        <div className="text-lightGray text-xs font-[500]">{customer}</div>
+        <div className="text-lightGray text-xs font-[500]">{total}</div>
+        <div className="text-lightGray text-xs font-[500]">{payment}</div>
         <div
-          className={`px-2 py-[0.3rem] rounded-md text-center text-xs font-[500]
-            ${status === "Low Stock" && "bg-[#FFF0EA] text-[#F86624]"}
-            ${status === "Published" && "bg-[#E9FAF7] text-[#1A9882]"}
-            ${status === "Draft" && "bg-[#F0F1F3] text-[#667085]"} 
-            ${status === "Out of Stock" && "bg-[#FEECEE] text-[#EB3D4D]"} 
+          className={`px-2 py-[0.3rem] rounded-md text-center font-[500] text-xs 
+            ${status === "Processing" && "bg-[#FFF0EA] text-[#F86624]"}
+            ${status === "Shiped" && "bg-[#EAF8FF] text-[#2BB2FE]"} 
+            ${status === "Delivered" && "bg-[#E9FAF7] text-[#1A9882]"} 
+            ${status === "Published" && "bg-[#E9FAF7] text-[#1A9882]"} 
+            ${status === "Cancelled" && "bg-[#FEECEE] text-[#EB3D4D]"} 
             `}
         >
           {status}
         </div>
-        <div className="text-lightGray text-xs font-[500]">{added}</div>
         <div className="flex justify-center items-center gap-3">
-          <button
-            onMouseEnter={() => setOnHover({ icon: "pencil", isHovered: true })}
-            onMouseLeave={() =>
-              setOnHover({ icon: "pencil", isHovered: false })
-            }
-          >
-            <PencilIcon
-              className="w-4 h-4 "
-              color={`${
-                onHover.icon === "pencil" && onHover.isHovered
-                  ? "#069912"
-                  : "#A3A9B6"
-              }`}
-            />
-          </button>
           <button
             onMouseEnter={() => setOnHover({ icon: "eye", isHovered: true })}
             onMouseLeave={() => setOnHover({ icon: "eye", isHovered: false })}
@@ -120,4 +105,4 @@ const ProductSectionCard = ({
   );
 };
 
-export default ProductSectionCard;
+export default OrderSectionCard;

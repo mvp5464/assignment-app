@@ -27,12 +27,16 @@ const CategoryTableSection = () => {
 
   useEffect(() => {
     const updateViews = async () => {
-      const { category } = await getCategory();
-      setSortedCategoryData(category);
+      const data = await getCategory();
+      if (data) {
+        setSortedCategoryData(data.category);
+        setIsLoading(false);
+      } else {
+        // Show Toast of error
+      }
     };
 
     updateViews();
-    setIsLoading(false);
   }, []);
 
   const handleAllSelect = () => {
@@ -128,6 +132,11 @@ const CategoryTableSection = () => {
         </div>
         <div className="min-w-[40rem] mb-4">
           {isLoading && <TableSkeleton />}
+          {sortedCategoryData?.length === 0 && !isLoading && (
+            <div className="font-bold text-sm text-center p-4 text-lightGray bg-lightBlue">
+              No categories to show
+            </div>
+          )}
           {sortedCategoryData?.map((val) => (
             <CategorySectionCard
               key={val.id}
