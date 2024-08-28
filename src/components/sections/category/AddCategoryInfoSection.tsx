@@ -1,8 +1,11 @@
+"use client";
 import ThumbnailIcon from "@/components/icons/ThumbnailIcon";
 import Wrapper from "@/components/Wrapper";
-import React from "react";
+import { CategoryContext } from "@/context/CategoryContextProvider";
+import React, { useContext } from "react";
 
 const AddCategoryInfoSection = () => {
+  const { setCategory } = useContext(CategoryContext);
   return (
     <div className="grid grid-cols-[0.9fr,3fr] gap-6">
       <Wrapper>
@@ -31,6 +34,9 @@ const AddCategoryInfoSection = () => {
               type="text"
               placeholder="Type category name here..."
               className="px-2 py-1 w-full bg-[#f9f9fc] rounded-lg border placeholder:text-sm"
+              onChange={(e) =>
+                setCategory((val) => ({ ...val, categoryName: e.target.value }))
+              }
             />
           </div>
           <div>
@@ -39,6 +45,9 @@ const AddCategoryInfoSection = () => {
               rows={6}
               placeholder="Type category description here..."
               className="px-2 py-1 w-full bg-[#f9f9fc] rounded-lg border placeholder:text-sm resize-none"
+              onChange={(e) =>
+                setCategory((val) => ({ ...val, description: e.target.value }))
+              }
             />
           </div>
         </div>

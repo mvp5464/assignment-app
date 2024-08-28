@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ArrowDownIcon from "../../icons/ArrowDownIcon";
 import {
   categorySectionData,
@@ -8,11 +8,32 @@ import {
 import CategorySectionCard from "../../cards/CategorySectionCard";
 import Pagination from "../../Pagination";
 import MinusIcon from "../../icons/MinusIcon";
+import { getCategory } from "@/actions/categories";
+
+export type CategoryApiType = {
+  id: string;
+  categoryName: string;
+  categoryDescription: string;
+  sold: number;
+  stock: number;
+  createdAt: Date;
+  updatedAt: Date;
+};
 
 const CategoryTableSection = () => {
   const [isClicked, setIsClicked] = useState<number[]>([]);
   const [sortedCategoryData, setSortedCategoryData] =
-    useState<CategorySectionDataType[]>(categorySectionData);
+    useState<CategorySectionDataType[]>();
+
+  useEffect(() => {
+    const updateViews = async () => {
+      const { category } = await getCategory();
+      console.log(category);
+      setSortedCategoryData(category);
+    };
+
+    updateViews();
+  }, []);
 
   const handleAllSelect = () => {
     if (isClicked.length > 0) setIsClicked([]);
@@ -58,10 +79,13 @@ const CategoryTableSection = () => {
       categorySectionData
         .slice()
         .sort(
-          (a, b) => new Date(a.added).getTime() - new Date(b.added).getTime()
+          (a, b) =>
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
         )
     );
   };
+
+  console.log({ sortedCategoryData });
 
   return (
     <div className="bg-white rounded-xl py-4 w-full transition 0.2s ease-linear hover:shadow-lg">
@@ -105,14 +129,14 @@ const CategoryTableSection = () => {
           <div className="flex justify-end items-center pr-4">Action</div>
         </div>
         <div className="min-w-[40rem] mb-4">
-          {sortedCategoryData.map((val) => (
+          {sortedCategoryData?.map((val) => (
             <CategorySectionCard
               key={val.id}
               categoryName={val.categoryName}
               categoryDescription={val.categoryDescription}
               sold={val.sold.toLocaleString()}
               stock={val.stock.toLocaleString()}
-              added={val.added}
+              added={val.createdAt}
               isClicked={isClicked.some((id) => id === val.id)}
               onClick={() => handleCardSelect(val)}
             />

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,15 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="grid md:grid-cols-[2fr,9fr] grid-cols-1 font-sans ">
-          <div className="bg-white min-h-screen  md:block hidden">
-            <Sidebar />
+        <Providers>
+          <div className="grid md:grid-cols-[2fr,9fr] grid-cols-1 font-sans ">
+            <div className="bg-white min-h-screen  md:block hidden">
+              <Sidebar />
+            </div>
+            <div className="p-6">
+              <Navbar />
+              {children}
+            </div>
           </div>
-          <div className="p-6">
-            <Navbar />
-            {children}
-          </div>
-        </div>
+        </Providers>
       </body>
     </html>
   );

@@ -1,11 +1,10 @@
 export interface CategorySectionDataType {
-  [x: string]: any;
   id: number;
   categoryName: string;
   categoryDescription?: string;
   sold: number;
   stock: number;
-  added: string;
+  createdAt: any;
 }
 
 export const categorySectionData: CategorySectionDataType[] = [
@@ -15,7 +14,7 @@ export const categorySectionData: CategorySectionDataType[] = [
     categoryDescription: "Great fashion, great selections, great prices",
     sold: 12100,
     stock: 10,
-    added: "29 Dec 2022",
+    createdAt: "29 Dec 2022",
   },
   {
     id: 2,
@@ -24,7 +23,7 @@ export const categorySectionData: CategorySectionDataType[] = [
       "Our range of watches are perfect whether you're looking to upgrade.",
     sold: 59000,
     stock: 204,
-    added: "24 Dec 2022",
+    createdAt: "24 Dec 2022",
   },
   {
     id: 3,
@@ -33,7 +32,7 @@ export const categorySectionData: CategorySectionDataType[] = [
       "Our big range of audio devices makes it easy to upgrade your device at a great price.",
     sold: 12500,
     stock: 48,
-    added: "12 Dec 2022",
+    createdAt: "12 Dec 2022",
   },
   {
     id: 4,
@@ -41,7 +40,7 @@ export const categorySectionData: CategorySectionDataType[] = [
     categoryDescription: "Our smartphone include all the big brands.",
     sold: 34800,
     stock: 401,
-    added: "21 Oct 2022",
+    createdAt: "21 Oct 2022",
   },
   {
     id: 5,
@@ -50,7 +49,7 @@ export const categorySectionData: CategorySectionDataType[] = [
       "Whatever your activity needs are, we've got you covered.",
     sold: 60700,
     stock: 120,
-    added: "21 Oct 2022",
+    createdAt: "21 Oct 2022",
   },
   {
     id: 6,
@@ -58,7 +57,7 @@ export const categorySectionData: CategorySectionDataType[] = [
     categoryDescription: "Our mouses include all the big brands.",
     sold: 23400,
     stock: 432,
-    added: "21 Oct 2022",
+    createdAt: "21 Oct 2022",
   },
   {
     id: 7,
@@ -66,7 +65,7 @@ export const categorySectionData: CategorySectionDataType[] = [
     categoryDescription: "Get the perfect gift for the little ones.",
     sold: 76000,
     stock: 0,
-    added: "19 Sep 2022",
+    createdAt: "19 Sep 2022",
   },
   {
     id: 8,
@@ -74,7 +73,7 @@ export const categorySectionData: CategorySectionDataType[] = [
     categoryDescription: "Our laptop include all the big brands.",
     sold: 400,
     stock: 347,
-    added: "19 Sep 2022",
+    createdAt: "19 Sep 2022",
   },
   {
     id: 9,
@@ -82,7 +81,7 @@ export const categorySectionData: CategorySectionDataType[] = [
     categoryDescription: "We have the perfect gear for you",
     sold: 812,
     stock: 299,
-    added: "19 Sep 2022",
+    createdAt: "19 Sep 2022",
   },
   {
     id: 10,
@@ -91,6 +90,6 @@ export const categorySectionData: CategorySectionDataType[] = [
       "You'll find exactly what you're looking for with our huge range of cameras.",
     sold: 123,
     stock: 38,
-    added: "20 Aug 2022",
+    createdAt: "20 Aug 2022",
   },
 ];
