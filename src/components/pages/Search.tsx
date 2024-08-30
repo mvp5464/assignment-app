@@ -109,7 +109,6 @@ const Search = () => {
                   key: "",
                   value: "",
                 });
-                focus();
                 setSearchResult([]);
               }}
             >
