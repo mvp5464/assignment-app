@@ -39,15 +39,15 @@ const Search = () => {
 
   return (
     <div>
-      <div className=" md:w-2/3 w-full text-[#2D2D2D] rounded-lg bg-[#EBEBEB] placeholder-[#999999] focus:outline-[#999999] focus:outline border border-[#999999] p-2 flex  items-center md:overflow-hidden overflow-x-auto">
-        <div>
+      <div className=" md:w-2/3 w-full text-[#2D2D2D] rounded-lg bg-[#EBEBEB] placeholder-[#999999] focus:outline-[#999999] focus:outline border border-[#999999]  flex  items-center md:overflow-hidden overflow-x-auto px-2">
+        <div className="py-3">
           {selectedResult.map((val) => (
             <span key={val.key} className="bg-white p-2 rounded-lg mr-2">
               {val.value}
             </span>
           ))}
         </div>
-        <div className=" w-full">
+        <div className={`w-full ${title.length > 0 ? "block" : "hidden"}`}>
           <input
             className=" py-3 px-2 ml-2 text-[#2D2D2D] rounded-lg bg-[#EBEBEB] placeholder-[#999999] focus:outline-none focus:outlines w-full min-w-32"
             type="text"
@@ -69,13 +69,11 @@ const Search = () => {
               className="border-b border-slate-600 py-4 px-2"
               key={val}
               onClick={(e) => {
-                console.log();
+                const innerValue = e.currentTarget.innerText;
                 setSearchValue({
-                  //@ts-ignore
-                  key: e.target.innerText,
+                  key: innerValue,
                   value: "",
                 });
-                //@ts-ignore
                 setIsSelected(false);
               }}
             >
@@ -91,10 +89,10 @@ const Search = () => {
             <div
               key={val.id}
               onClick={(e) => {
+                const innerValue = e.currentTarget.innerText;
                 setSelectedResult((val) => [
                   ...val,
-                  //@ts-ignore
-                  { key: searchValue.key, value: e.target.innerText },
+                  { key: searchValue.key, value: innerValue },
                 ]);
                 setTitle(title.filter((data) => data !== searchValue.key));
                 setSearchValue({
