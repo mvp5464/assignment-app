@@ -8,14 +8,9 @@ export async function GET() {
   const key = headersList.get("searchkey");
   if (!value || !key) return;
 
-  const find = userData.filter((val) => {
-    const data = val[key as keyof typeof val]
-      ?.toString()
-      .toLowerCase()
-      .includes(value);
-    return data;
-  });
-  console.log({ data2: find });
+  const find = userData.filter((val) =>
+    val[key as keyof typeof val]?.toString().toLowerCase().includes(value)
+  );
 
   return NextResponse.json({ find }, { status: 200 });
 }
