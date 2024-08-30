@@ -1,6 +1,6 @@
 "use client";
 import { UserDataType } from "@/utils/data/dummyUserData";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Search = () => {
   const [isSelected, setIsSelected] = useState<boolean>(false);
@@ -20,6 +20,14 @@ const Search = () => {
     key: string;
     value: string;
   }>({ key: "", value: "" });
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const focus = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
 
   const fetchData = async () => {
     if (!searchValue.key || !searchValue.value) return;
@@ -50,6 +58,7 @@ const Search = () => {
         <div className={`w-full ${title.length > 0 ? "block" : "hidden"}`}>
           <input
             className=" py-3 px-2 ml-2 text-[#2D2D2D] rounded-lg bg-[#EBEBEB] placeholder-[#999999] focus:outline-none focus:outlines w-full min-w-32"
+            ref={inputRef}
             type="text"
             placeholder={searchValue.key || "Search"}
             value={!searchValue.key ? "" : searchValue.value}
@@ -74,6 +83,7 @@ const Search = () => {
                   key: innerValue,
                   value: "",
                 });
+                focus();
                 setIsSelected(false);
               }}
             >
@@ -99,6 +109,7 @@ const Search = () => {
                   key: "",
                   value: "",
                 });
+                focus();
                 setSearchResult([]);
               }}
             >
