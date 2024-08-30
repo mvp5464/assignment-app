@@ -29,6 +29,7 @@ export const navbarData: NavbarType[] = [
       { title: "Categories", link: "dashboard/categories" },
       { title: "Product", link: "dashboard/product_list" },
       { title: "Orders", link: "dashboard/order_list" },
+      { title: "Search", link: "dashboard/search" },
     ],
   },
 ];
